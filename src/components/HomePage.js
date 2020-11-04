@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import SearchBox from "./SearchBox";
-import PokemonCardContainer from "./PokeCardContainer";
+import img from "../assets/pikachu.gif";
 
 const StyledHomePage = styled.div`
   h1 {
     text-transform: uppercase;
     text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
   }
 `;
 
@@ -15,7 +20,7 @@ export default function HomePage() {
     <StyledHomePage>
       <h1>A PokeAPI Project</h1>
       <SearchBox />
-      <PokemonCardContainer />
+      <img src={img} />
     </StyledHomePage>
   );
 }
