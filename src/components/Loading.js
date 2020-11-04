@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../assets/pikachu2.gif";
 
-export default function Loading() {
+function Loading() {
   return (
     <div>
       <h1>Loading...</h1>
@@ -9,3 +9,5 @@ export default function Loading() {
     </div>
   );
 }
+
+export default Loading;

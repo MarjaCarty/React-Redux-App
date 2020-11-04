@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../assets/pokeball-input-02.png";
+import { connect } from "react-redux";
 
 const StyledSearch = styled.div`
   h2 {
@@ -27,7 +28,7 @@ const StyledSearch = styled.div`
   }
 `;
 
-export default function SearchBox() {
+function SearchBox({ pokemonName }) {
   const [formValue, setFormValue] = useState("");
 
   const handleChange = (e) => {
@@ -56,3 +57,11 @@ export default function SearchBox() {
     </StyledSearch>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    pokemonName: state.pokemonName,
+  };
+};
+
+export default connect(mapStateToProps, {})(SearchBox);

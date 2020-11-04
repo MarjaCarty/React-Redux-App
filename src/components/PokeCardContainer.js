@@ -6,11 +6,11 @@ const StyledContainer = styled.div`
   justify-content: center;
 `;
 
-export default function PokeCardContainer() {
+function PokeCardContainer({ pokemonData }) {
   return (
     <StyledContainer>
       <div className="top">
-        <img src={} />
+        <img src="" />
         <div className="name"></div>
       </div>
       <hr />
@@ -55,3 +55,5 @@ export default function PokeCardContainer() {
     </StyledContainer>
   );
 }
+
+export default PokeCardContainer;
