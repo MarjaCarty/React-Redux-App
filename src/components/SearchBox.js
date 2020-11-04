@@ -30,6 +30,7 @@ const StyledSearch = styled.div`
 
 function SearchBox({ pokemonName }) {
   const [formValue, setFormValue] = useState("");
+  const [name, setName] = useState("");
 
   const handleChange = (e) => {
     setFormValue(e.target.value);
@@ -37,6 +38,7 @@ function SearchBox({ pokemonName }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setName(formValue);
     setFormValue("");
   };
 
@@ -59,9 +61,7 @@ function SearchBox({ pokemonName }) {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    pokemonName: state.pokemonName,
-  };
+  return {};
 };
 
 export default connect(mapStateToProps, {})(SearchBox);
