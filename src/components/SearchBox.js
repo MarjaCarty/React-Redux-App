@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import img from "../assets/pokeball-input-02.png";
 import { connect } from "react-redux";
+import { fetchPokemon } from "../store/actions";
 
 const StyledSearch = styled.div`
   h2 {
@@ -28,17 +29,18 @@ const StyledSearch = styled.div`
   }
 `;
 
-function SearchBox({ pokemonName }) {
+function SearchBox(props) {
   const [formValue, setFormValue] = useState("");
   const [name, setName] = useState("");
 
   const handleChange = (e) => {
     setFormValue(e.target.value);
+    setName(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setName(formValue);
+    props.fetchPokemon(name);
     setFormValue("");
   };
 
@@ -64,4 +66,4 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-export default connect(mapStateToProps, {})(SearchBox);
+export default connect(mapStateToProps, { fetchPokemon })(SearchBox);
